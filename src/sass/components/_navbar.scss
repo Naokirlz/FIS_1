@@ -1,0 +1,49 @@
+.barra-nav{
+	position: fixed;
+	height: 100px;
+	width: 100%;
+	top: 0;
+	left: 0;
+    background: #ffffff;
+    box-shadow:  2px 2px 8px rgba(97, 97, 97, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    z-index: 1000;
+
+    .logo{
+        height: 80px;
+        margin-left: 5%;
+    }
+
+    ul{
+        float: right;
+        margin-right: 5%;
+
+        li{
+            list-style: none;
+            margin: 0 8px;
+            display: inline-block;
+            line-height: 80px;
+
+            a{
+                font-size: 20px;
+                font-family: 'Roboto', sans-serif;
+                color:#737373;
+                padding: 6px 13px;
+                text-decoration: none;
+
+                &:hover{
+                    color:#cccccc;
+                }
+            }
+            a.active{
+                background: #fef3e6;
+                border-color: #737373;
+                border-radius: 5px;
+            }
+        }
+    }
+}

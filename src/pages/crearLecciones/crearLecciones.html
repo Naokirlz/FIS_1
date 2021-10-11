@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Crear Lecciones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
+</head>
+
+<body>
+
+    <nav class="navbar barra-nav">
+        <img class="logo" src="../../assets/img/logo.png" height="100px">
+        <ul>
+            <li><a href="../../../inicio.html">Inicio</a></li>
+            <li><a href="../verLecciones/verLecciones.html">Ver Lecciones</a></li>
+            <li><a class="active" href="#">Crear Lecciones</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <h1 class="mt-0">Crear Lecciones</h1>
+        <form class="card p-5 col-10 m-auto">
+            <div style="border-top: 1px solid black;border-bottom: 1px solid black;" class="p-3">
+                <h2>Sección de Canción:</h2>
+                <button class="btn btn-outline-success btn-sm" id="btn-togleVisible">Crear Nueva
+                    Canción</button>
+                <div class="selCancion">
+                    <div class="ladoIzquierdo visible" id="lado-izquierdo">
+                        <h3>Seleccione una canción:</h3>
+                        <div class="form-group">
+                            <label for="sel-canciones">Canciones</label>
+                            <select class="form-control" id="sel-canciones">
+                            </select>
+                            <div id="val-sel-canciones" class="invalid-feedback not">
+                                * Seleccione una canción.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ladoDerecho" id="lado-derecho">
+                        <h3>Crear una canción:</h3>
+                        <div class="form-group">
+                            <label for="txt-nombre-cancion">Nombre de la Canción</label>
+                            <input type="text" class="form-control" id="txt-nombre-cancion"
+                                placeholder="Nombre de la canción">
+                            <div id="val-txt-nombre-cancion" class="invalid-feedback not">
+                                * Introduzca un nombre entre 5 y 20 caracteres.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txt-autor">Autor</label>
+                            <input type="text" class="form-control" id="txt-autor" placeholder="Autor de la Canción">
+                            <div id="val-txt-autor" class="invalid-feedback not">
+                                * Introduzca un autor entre 5 y 20 caracteres.
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Sonido</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="imp-sonido">
+                                <label class="custom-file-label" id="lbl-sonido" for="imp-sonido">Seleccione el Archivo
+                                    .mp3</label>
+                                <div id="val-imp-sonido" class="invalid-feedback not">
+                                    * Seleccione un archivo de sonido.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div><label>Cargue la Tablatura</label><span><small style="color: red;"
+                                    id="spn-caracteres"></small></span></div>
+                        <!-- /.card-header -->
+                        <div class="pad">
+                            <div class="mb-3">
+                                <textarea class="textarea" id="txt-tablatura" placeholder="Place some text here"
+                                    style="width: 100%; height: 300px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                            </div>
+                        </div>
+                        <button type="button" id="btn-guardar-cancion"
+                            class="btn btn-lg btn-block btn-outline-success mt-2">Guardar Canción</button>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid black;border-bottom: 1px solid black;" class="p-3" id="crear-lecc">
+                <h2>Cree la lección:</h2>
+                <div class="form-group">
+                    <label for="txt-nombre-leccion">Nombre de la Lección</label>
+                    <input type="text" class="form-control" id="txt-nombre-leccion" placeholder="Nombre de la Lección">
+                    <div id="val-txt-nombre-leccion" class="invalid-feedback not">
+                        * Introduzca un nombre entre 5 y 20 caracteres.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txt-descripcion-leccion">Descripción</label>
+                    <textarea class="form-control" id="txt-descripcion-leccion" rows="3"></textarea>
+                    <div id="val-txt-descripcion-leccion" class="invalid-feedback not">
+                        * Introduzca una descripción corta entre 10 y 250 caracteres.
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Imágen</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="fil-imagen">
+                        <label class="custom-file-label" id="lbl-fil-imagen" for="fil-imagen">Seleccione el Archivo .png
+                            o .jpg</label>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div><label>Cree la lección</label></div>
+                <div class="pad">
+                    <div class="mb-3">
+                        <textarea class="textarea" id="txt-leccion" placeholder="Texto para la lección"
+                            style="width: 100%; height: 300px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" id="btn-guardar"
+                    class="btn btn-lg btn-block btn-outline-success mt-2 disabled">Guardar Lección</button>
+            </div>
+        </form>
+        <div class="toastAlert" id="cont-alerta">
+            <div id="alerta" class="alert">
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- <script src="./crearLecciones.js"></script> -->
+    <script src="../../../dist/crearLeccionDist.js"></script>
+    <script src="../../../dist/styles.js"></script>
+    <!-- <script type="module" src="./crearLeccionesApp.js"></script> -->
+</body>
+
+</html>

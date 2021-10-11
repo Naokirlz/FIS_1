@@ -1,0 +1,21 @@
+button{
+    padding: 10px;
+    font-family: $font-title;
+    font-weight: 700;
+    border-radius: 2px;
+    &:hover{
+        cursor: pointer;
+    }
+    &.primary{
+        background-color: $primary-light;
+        border: 1px solid $border-dark;
+        transition: 0.3s;
+    }
+    &.primary:hover{
+        background-color: $primary;
+        color: $font-smoke;
+    }
+    .success{
+        background-color: $success;
+    }
+}

@@ -1,0 +1,14 @@
+// layout
+@import "./_colors";
+@import "./_fonts";
+@import "./_layout";
+@import "./components/_navbar";
+@import "./components/_boton";
+@import "./components/_card";
+@import "./components/_table";
+@import "./components/_modal";
+@import "./components/_inputs";
+
+//pages
+@import "../pages/crearLecciones/crearLecciones.scss";
+@import "../pages/verLecciones/verLecciones.scss";

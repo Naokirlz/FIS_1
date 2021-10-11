@@ -1,695 +1,470 @@
-![Imágen Logo ORT](APV-ob1-PNGs/logoort.png)
+![imagen Logo ORT](assets/logoort.png)
 
 # Fundamentos de Ingeniería de Software
-# Obligatorio 1
+# Obligatorio 2
 ___Versión 1.0___
 
-**N4A, Docente: Gerardo Quintana.**
+**N4A, Docente: Gerardo Quintana, Martín D'Uva**
 
-**Integrantes: Cristian Palma, Federico Alonso, Valeria Vera.**
+**Integrantes: Cristian Palma, Valeria Vera, Federico Alonso.**
 
-15 de octubre de 2020
+23 de noviembre de 2020
 
-**URL del repositorio: https://github.com/ORT-FIS-202008/ob1-alonso-palma-vera-1**
+**URL del repositorio: https://github.com/ORT-FIS-202008/ob2-ort-fis-obl2-alonso-palma-vera**
 
 # ÍNDICE
 
 ### 1. [PREFACIO](#I1)
 ### 2. [GLOSARIO](#I2)
-### 3. [INVESTIGACIÓN](#I3)
-- ### 3.1. [Actividades realizadas](#I31)
-    - ### 3.1.1. [Resultado obtenidos](#I311)
-    - ### 3.1.2. [Modelo de Usuarios del Sistema](#I312)
-        - ### 3.1.2.1. [Usuarios de internet sin autenticar](#I3121)
-        - ### 3.1.2.2. [ User persona alumno](#I3122)
-    - ### 3.1.3. [Interesados o stakeholders](#I313)
-        - ### 3.1.3.1. [Profesor de Guitarra que genera contenido para el sistema](#I3131)
-        - ### 3.1.3.2. [Administrador del sistema](#I3132)
-        - ### 3.1.3.3. [Alumnos](#I3133)
-        - ### 3.1.3.4. [Padres y/o tutores](#I3134)
-        - ### 3.1.3.5. [Equipo de desarrollo](#I3135)
-        - ### 3.1.3.6. [Otros profesores de Guitarra](#I3136)
-        - ### 3.1.3.7. [Plataformas online donde dan clases de guitarra](#I3137)
-        - ### 3.1.3.8. [Usuarios que no son alumnos](#I3138)
-- ### 3.2. [Determinación del sistema](#I32)
-    - ### 3.2.1. [Objetivo del sistema](#I321)
-    - ### 3.2.2. [Restricciones](#I322)
-    - ### 3.2.3. [Alcance del producto](#I323)
-    - ### 3.2.4. [Requerimientos de Usuario](#I324)
-    - ### 3.2.5. [Requerimientos del sistema](#I325)
-### 4. [ESPECIFICACIÓN](#I4)
-- ### 4.1. [Diccionario de Datos](#I41)
-    - ### 4.1.1. [DatosUsuario](#I411)
-    - ### 4.1.2. [DatosCurso](#I412)
-    - ### 4.1.3. [DatosVideo](#I413)
-    - ### 4.1.4. [DatosHistorial](#I414)
-- ### 4.2. [Diagrama de contexto](#I42)
-- ### 4.3. [Diagrama del dominio](#I43)
-- ### 4.4. [Diagrama de casos de uso](#I44)
-- ### 4.5. [Negociación y priorización de requerimientos](#I45)
-    - ### 4.5.1. [Requerimientos Funcionales](#I451)
-    - ### 4.5.2. [Requerimientos No Funcionales](#I452)
-- ### 4.6. [USER STORIES](#I46)
-    - ### 4.6.1. [User Story 01 Alta Usuario](#I461)
-    - ### 4.6.2. [User Story 12 Ver Video](#I462)
-    - ### 4.6.3. [User Story 05 Alta Curso](#I463)
-- ### 4.7. [CASOS DE USO](#I47)
-    - ### 4.7.1. [Caso de Uso 01 Alta Usuario](#I471)
-    - ### 4.7.2. [Caso de Uso 12 Ver Video](#I472)
-    - ### 4.7.3. [Caso de Uso 05 Alta Curso](#I473)
-- ### 4.8. [REQUERIMIENTOS FUNCIONALES](#I48)
-    - ### 4.8.1. [Gestión de usuarios](#I481)
-    - ### 4.8.2. [Autenticación de usuarios](#I482)
-    - ### 4.8.3. [Gestión de cursos](#I483)
-    - ### 4.8.4. [Gestión de videos](#I484)
-    - ### 4.8.5. [Visualización de contenido](#I485)
-    - ### 4.8.6. [Histórico de reproducciones](#I486)
-- ### 4.9. [REQUERIMIENTOS NO FUNCIONALES](#I49)
-### 5. [VERIFICACIÓN Y VALIDACIÓN DE REQUERIMIENTOS](#I5)
-- ### 5.1. [VERIFICACIÓN](#I51)
-- ### 5.2. [VALIDACIÓN](#I52)
-    - ### 5.2.1. [Primera reunión](#I521)
-    - ### 5.2.2. [Segunda reunión](#I522)
-    - ### 5.2.3. [Tercera reunión](#I523)
-### 6. [REFLEXIÓN](#I6)
+### 3. [PROCESO DE BUILD](#I3)
+- ### 3.1. [Clonar el Repositorio](#I31)
+- ### 3.2. [Instalar la Aplicación](#I32)
+### 4. [CALIDAD DE CÓDIGO](#I4)
+- ### 4.1. [Código en JavaScript](#I41)
+- ### 4.2. [Código en HTML y CSS](#I42)
+### 5. [PRUEBAS UNITARIAS](#I5)
+### 6. [INTERFAZ DE USUARIO](#I6)
+- ### 6.1. [Evaluación de la Usabilidad](#I61)
+  - ### 6.1.1 [Análisis Heurístico](#I611)
+  - ### 6.1.2 [Pruebas con Usuarios](#I612)
+- ### 6.2. [Evaluación de la Accesibilidad](#I62)
+### 7. [TESTING FUNCIONAL](#I7)
+- ### 7.1. [Generación de Casos de Prueba](#I71)
+- ### 7.2. [Pruebas exploratorias](#I72)
+- ### 7.3. [Ejecución de Casos de Prueba](#I73)
+### 8. [REPORTE DE DEFECTOS](#I8)
+### 9. [TRABAJO DEL EQUIPO](#I9)
+### 10. [REFLEXIÓN](#I10)
 
 # 1. PREFACIO <a name="I1"></a>
 
-El presente documento está redactado de forma tal que se entienda la trazabilidad de los trabajos realizados para recabar las necesidades del cliente. Comenzando con lenguaje natural y volviéndose técnico a medida que avanza el documento, tornándose complejo para el usuario final, pero sencillo de entender al grupo de desarrollo que posteriormente realizará el trabajo pertinente.
+El presente repositorio cuenta con la aplicación solicitada por el obligatorio, así como con el estudio de funcionalidad, usabilidad, testing e interfaz de usuario desarrollado a partir de la misma.
 
-El modelo de proceso de software a utilizar será el desarrollo incremental, en el cual nos comunicaremos periódicamente con el cliente, a efectos de aclarar dudas e ir mostrando avances (versiones de la pieza de software), de esta forma nos aseguraremos de brindar la solución necesaria, y no desviarnos del trabajo deseado. A su vez el cliente corroborará el trabajo efectuado por el equipo y cada versión añadirá funcionalidad a la versión anterior.
+Se compone de una estructura de carpetas, en las que se encuentra todo lo necesario para implementar la misma, se desarrolla el procedimiento en la sección [Proceso de build](#I3). Como pasos previos para el mismo se debe tener instalado en el ordenador nodejs y git.
 
-El Proyecto lo versionaremos de forma tradicional, asignando dos números, los cuales irán incrementando conforme el desarrollo del software, comenzando desde la v1.0.
-Estos números aumentan cuando:
-- Mayor: el software sufre grandes cambios y mejoras.
-- Menor: el software sufre pequeños cambios y/o correcciones de errores.
-
-Los archivos que formarán parte del documento se referenciarán de la siguiente forma:
-Número de referencia del documento: APV-ob1-Z-NNNN, donde:
-- APV es el identificador de la empresa de software (Alonso-Palma-Vera)
-- ob1 es el identificador del proyecto
-- Z es un identificador en lenguaje natural del elemento 
-- NNNN es el año. 
+Las tecnologías utilizadas son SCSS, Javascript y HTML, generando cuatro páginas estáticas, las cuales no poseen persistencia de datos y cada una de ellas tiene datos precargados para simular el funcionamiento de la aplicación.
 
 # 2. GLOSARIO <a name="I2"></a>
 
 Se especifíca la terminología utilizada a lo largo del documento:
 
 - *Software:* Conjunto de programas que permiten a la computadora realizar determinadas tareas
-- *Ingenieria inversa:* Proceso llevado a cabo con el objetivo de obtener información o un diseño a partir de un producto, con el fin de determinar cuáles son sus componentes y de qué manera interactuan entre si.
 - *Usuario*: Persona que utiliza el sistema.
-- *Usuario final*: Persona o personas que van a manipular de manera directa un producto de software
-- *Usuario administrador del sitio*: Usuario encargado de la configuración del sistema
-- *Usuario autenticado*: Usuario del sistema que tiene una sesión activa.
 - *Responsive*: Diseño de página web que se adapta de forma automática a la resolución de la pantalla donde está siendo visualizado y a diferentes tipos de dispositivos.
-- *Baja usuario:* Eliminar a un usuario permanentemente de un sistema.
-- *Alta usuario:* Dar acceso a un usuario a un sistema o a algunas caracteristicas de un sistema.
-- *Autenticar:* Autorizar a un usuario a ingresar a un sistema.
 - *Plataforma:* Sistema que permite la ejecución de diversas aplicaciones bajo un mismo entorno, dando a los usuarios la posibilidad de acceder a ellas a través de Internet.
-- *Diagrama de dominio:*  Se describen las distintas entidades, sus atributos, papeles y relaciones, además de las restricciones que rigen el dominio del problema.
-- *Diagrama de contexto:* Diagrama que representa todas las entidades externas que podráan interactuar con un sistema.
-- *User story:* Describe una funcionalidad simple y atómica que será de valor para un usuario o comprador de un sistema o software.
-- *Caso de uso:* Secuencia de transacciones que son desarrolladas por un sistema en respuesta a un evento que inicia un actor sobre el propio sistema
+- *Caso de uso:* Secuencia de transacciones que son desarrolladas por un sistema en respuesta a un evento que inicia un actor sobre el propio sistema.
 - *Diagrama de casos de uso:* Diagrama que muestra la relación entre los actores y los casos de uso en un sistema.
-- *Requerimiento:* Condición o capacidad de un sistema requerida por el usuario para resolver un problema o alcanzar un objetivo
-- *Requerimiento funcional:*  Descripción del comportamiento del sistema en condiciones específicas
-- *Requerimiento no funcional:* Restricciones a los servicios provistos por el sistema y/o atributos de calidad del mismo.
+- *Requerimiento:* Condición o capacidad de un sistema requerida por el usuario para resolver un problema o alcanzar un objetivo.
 
-# 3. INVESTIGACIÓN <a name="I3"></a>
+# 3. PROCESO DE BUILD <a name="I3"></a>
 
-## 3.1 Actividades realizadas<a name="I31"></a>
+A continuación se detallan los pasos a seguir para ejecutar la aplicación en un entorno local.
 
-Para comenzar, posterior a recibir la orden de trabajo y previo al contacto con el cliente, se comenzó a indagar sobre cómo se debía abordar la investigación. En ese momento se contaba con la información de que era un sistema para que los niños aprendan a tocar guitarra online, siendo nuestro cliente el profesor a cargo de impartir las clases. El cliente impartia clases presenciales a niños antes de comenzar la pandemia,  su hijo (quien nos contactó) es quien realizaba toda la administración, y debido a la emergencia sanitaria tuvieron que dejar de dar clases, perdiendo de esta forma una fuente de ingreso extra.
+## 3.1. Clonar el Repositorio <a name="I31"></a>
 
-Resultante de la información recibida, se visualiza de forma rápida contenido relacionado con la enseñanza de guitarra (a efectos de informarse sobre los términos utilizados en las mismas: acordes, partituras, videos explicativos, afinación, tipos de guitarra, etc.), y se prepara una entrevista primaria a los principales involucrados (el profesor de guitarra y su hijo), abordando con uno los requerimientos del área de educación y con el otro los de la administración del negocio.
+Acceder en el navegador a la [Ruta del Repositorio](https://github.com/ORT-FIS-202008/ob2-ort-fis-obl2-alonso-palma-vera).
 
-Como el cliente está bien definido y son dos personas particulares se decide realizar entrevistas, pudiendo de esta forma enfocarnos en los problemas que ellos desean que podamos resolver. Las mismas aparecen en los documentos [Entrevista 1](APV-ob1-Entrevista1-2020.md) y [Entrevista 2](APV-ob1-Entrevista2-2020.md)
+![imagen acceso a ruta](assets/build1.png)
+
+Copiar la ruta para clonar el mismo.
+
+![imagen copiar la ruta](assets/build2.png)
+
+En una nueva carpeta en el ordenador personal, hacer click derecho con el mouse y seleccionar "Git Bash Here".
+
+![Abrir la consola de git en una carpeta](assets/build3.png)
+
+Introducir el comando:
+
+    - git clone https://github.com/ORT-FIS-202008/ob2-ort-fis-obl2-alonso-palma-vera
+
+![Clonar el repositorio](assets/build4.png)
+
+Acceder a la carpeta creada con el siguiente comando:
+
+    - cd ob2-ort-fis-obl2-alonso-palma-vera
+
+![Acceder a la carpeta del repositorio](assets/build5.png)
+
+## 3.2. Instalar la Aplicación <a name="I32"></a>
+
+Una vez posicionados en la carpeta se debe correr el comando:
+
+    - npm install
+
+Se entiende que ya se tiene instalado nodejs en el ordenador, de lo contrario se debe realizar con anterioridad, por más información visitar [el sitio oficial de nodejs](https://nodejs.org/es/).
+
+![Instalar la aplicación](assets/build6.png)
+
+Luego de la instalación de dependencias, se procede con la actualización de los archivos .js. 
+
+Este proceso sirva para que la aplicación funcione con normalidad sin necesidad de levantarla desde un servidor, además de no tener la necesidad de utilizar archivos de clase distintos para correr las pruebas jest. 
+
+Se debe aplicar el siguiente comando:
+
+    - npm run start
+
+![Actualizar archivos javascript](assets/build7.png)
+
+Después se aplica webpack para minificar los archivos, por lo que mejorará el rendimiento de la aplicación, se debe aplicar el siguiente comando:
+
+    - npm run build
+
+![Webpack](assets/build8.png)
+
+Para finalizar se accede a la carpeta y se hace doble click sobre el index.html
+
+![Abrir en el Navegador](assets/build9.png)
+
+# 4. CALIDAD DE CÓDIGO <a name="I4"></a>
+
+El equipo estableció que el estándar de codificación sea el de Google:
+
+[Estandar de google](http://google.github.io/styleguide/), tanto para HTML/ CSS, como para JavaScript.
+
+De esta manera, facilitó el trabajo en equipo, ya que se hizo más fácil leer el código de todos los integrantes del grupo.
+
+Una de las técnicas utilizadas para mejorar la calidad del código consistió en la revisión de código, por cuestiones de tiempo el primer objetivo deseado fue tener la estructura de la página funcionando en detrimento de la calidad del código, pero de esta forma pudimos dividirnos mejor el trabajo, lo cual nos permitió trabajar en paralelo en el testing exploratorio, y la revisión de código y así asegurar el cumplimento de los estándares antes mencionados, para los cuales según la tecnología de desarrollo se encaró de distintas maneras:
+
+## 4.1. Código en JavaScript<a name="I41"></a>
+
+Además, concordamos en utilizar las siguientes herramientas que nos fueron de ayuda para aplicar estos estándares:
+
+- Plugin de VsCode: [JSHint](https://jshint.com/docs/options/)
+- Para mejorar el Formateo, vimos que la documentación de Google recomendaba [clang-format](http://clang.llvm.org/docs/ClangFormatStyleOptions.html)
+
+El plugin clang-format nos ayudó a detectar bastantes errores como por ejemplo:
+
+- Indentación.
+- Sangría.
+- Wspacios en blanco.
+- Mal uso de “var” para variables, sugiriendo usar “let” y “const” para los casos que la variable no tenía ninguna reasignación del valor.
+- Uso de comillas simples para String.
+- Estructuras de control, abertura y clausura.
+
+Cabe aclarar, que fue ignorada la recomendación que sugería eliminar el punto y coma al final de cada sentencia, pero que si era recomendado por el plugin JsHint.
+
+![Calidad de codigo 1](assets/calidad1.png)
+
+## 4.2. Código en HTML y CSS <a name="I42"></a>
+
+Además, concordamos en utilizar las siguientes herramientas que nos fueron de ayuda para aplicar estos estándares:
+
+Como herramienta para la validación del código HTML y CSS, subimos nuestro código al siguiente sitio [validador](https://validator.w3.org/#validate_by_upload), obteniendo los siguientes resultados:
+
+- en la página crearLecciones.html
+
+![Calidad de codigo 2](assets/calidad2.png)
+
+- en la página realizarLección.html
+
+![Calidad de codigo 3](assets/calidad3.png)
+
+- en la página verLecciones.html 
+
+![Calidad de codigo 4](assets/calidad4.png)
+
+- Validación del css en [jigsaw.w3.org](https://jigsaw.w3.org/css-validator/)
+
+![Calidad de codigo 5](assets/calidad5.png)
+
+- En el archivo stylesConfig.css
+
+![Calidad de codigo 6](assets/calidad6.png)
+
+# 5. PRUEBAS UNITARIAS <a name="I5"></a>
+
+Se configuran pruebas unitarias para el proceso de detección de errores en el dominio del sistema creado. La herramienta utilizada para el procedimiento es jestjs (para mayor información visitar su [sitio oficial](https://jestjs.io/)).
+
+El detalle de lo realizado con la aplicación de la herramienta se encuentra en el [estudio de pruebas unitarias](src/tests/README.md).
+
+Para correr las prebas unitarias sobre el sistema, se debe aplicar el comando:
+
+    - npm run test
+
+El resultado del mismo es una cobertura del 100% de las funciones. y un 100% de las líneas de código.
+
+![Captura de pruebas luego de la solucionar la reestructuración](src/tests/assets/pruebas3.png)
+
+Como aprendizaje se obtuvo que es más fiable contar con la herramienta, se verifica que al momento de realizar cambios en la aplicación o reestructura de código, se tiene el respaldo de las pruebas para corroborar que el código sigue funcionando como corresponde, por lo que el trabajo realizado una única vez ahorra tiempo de pruebas a futuro.
+
+# 6. INTERFAZ DE USUARIO <a name="I6"></a>
+
+Para hacer el desarrollo de la interfaz de usuario, clasificamos en primera instancia cuales páginas iban a ser utilizadas por los niños (*realizarLeccion.html* y *verLeccion.html*) y por otra parte la página en la cual iba a ser utilizada por un adulto, quien tiene la responsabilidad de subir el contenido a la página (*crearLecciones.html*).
+
+El foco principal en esta primera versión fue hacer lo más fácil posible el uso de la aplicación, tomando las siguientes métricas para su posterior evaluación:
+
+- Tiempo de aprendizaje (el niño debe ser capaz la primera vez que ingresa al sitio de poder llegar a la página de realizar una lección en un tiempo menor o igual a 2 minutos).
+- Velocidad de operación (desde la página de *inicio.html*, en dos clicks el niño ya puede ver la lección).
+
+Respecto a la página de *crearLecciones.html*, la medición se hizo en el siguiente aspecto:
+
+- Tiempo de aprendizaje. (el adulto debe ser capaz la primera vez que utiliza la aplicación, de poder crear una nueva lección en el sistema en un tiempo menor o igual a 5 minutos).
+
+En cuanto a la accesibilidad del sistema, por factor tiempo que contamos para el desarrollo de la aplicación, se decidió no hacer énfasis en este aspecto, pero si documentar las mejoras que eventualmente se podrían tomar en cuenta para desarrollar a futuro, para la cual utilizamos una herramienta llamada [“AChequer”](https://achecker.ca/checker/index.php), la cual hace un chequeo de verificación de los estándares [WCAG 1.0](https://www.w3.org/TR/WAI-WEBCONTENT/) y [WCAG 2.0](https://www.w3.org/TR/WCAG20/), en todos sus niveles: 
+
+- Perceptible.
+- Operable.
+- Comprensible.
+- Robusto.
+
+En nuestro proyecto, utilizamos [“Bootstrap”](https://getbootstrap.com/docs/4.1/getting-started/introduction/) con los siguientes objetivos:
+
+- Hacer una página web con diseño responsivo.
+- Como equipo nos pareció rápido de aprender a usar.
+- Ser consistentes en todo el proyecto con el mismo estilo de diseño.
+
+## 6.1. Evaluación de la usabilidad <a name="I61"></a>
+
+Para lograr este objetivo utilizamos las siguientes técnicas:
+
+- Análisis Heurístico.
+- Pruebas con usuarios.
+
+### 6.1.1. Análisis heurístico <a name="I611"></a>
+
+Para evaluar la usabilidad de la interfaz utilizamos las heurísticas de Nielsen, entre los miembros del equipo nos repartimos las heurísticas a analizar realizando una inspección de la interfaz para evaluar la calidad de la misma a partir del cumplimiento de los principios heurísticos. Se utilizan los principios heurísticos de Nielsen por ser los más reconocidos universalmente.
+
+Resultado del Análisis:
  
-Además como dato resultante de la entrevista con el hijo del cliente, se obtuvo una página web de su interés, por lo que se aplicó el método de [Ingeniería reversa](APV-ob1-IngenieriaReversa-2020.md) para así poder obtener un mejor detalle de las expectativas del cliente. 
+1. Principio visibilidad del estado del sistema: 
 
-Estudiando lo anterior se extraen diferentes roles de usuarios que participarán con el sistema, los cuales se detallarán en las siguienes secciones.
+**NO CUMPLE** -Se ejecuta el sistema y se observa que no se mantiene a los usuarios informados sobre lo que ocurre, a través de una retroalimentación apropiada. Se despliegan mensajes de error poco específicos que no le indican al usuario el problema que ha ocurrido y como solucionarlo, en la página cuando el alumno se encuentra realizando una lección, no se sabe en que punto de la navegación nos encontramos.
 
-### 3.1.1 Resultados Obtenidos<a name="I311"></a>
-Luego de realizar las tareas de investigación se determina que el sistema de mayor conveniencia es el desarrollo de una aplicación web, en la cual se carguen las lecciones del profesor y sus alumnos puedan ver las mismas desde su hogar. 
+![imagen de usabilidad](assets/usabilidad1.png)
 
-Para lo mismo se establecen tres actores:
+2. Empate entre el sistema y el mundo real: 
 
-- Niño: Accederá al sistema, y recibirá las clases grabadas con anterioridad.
-- Usuario no Autenticado: Accederá a la página por algún medio, y podrá ver la información pública del sitio, sin poder acceder a la sección privada del mismo.
-- Administrador: Se encargara de subir y organizar las clases y cursos, también de validar el acceso de los usuarios al sistema.
+**CUMPLE** -El lenguaje es conocido para el usuario, no se encontró algún concepto complejo para la compresión de un niño (en las páginas -*realizarLeccion.html* y *verLeccion.html*)
 
-### 3.1.2 Modelo de Usuarios del Sistema <a name="I312"></a>
-En la presente sección estudiaremos a los actores del sistema. A efecto de complementar la información recabada en las entrevistas, y basándonos en ellas, utilizaremos la técnica de la User Persona. Crearemos un personaje ficticio de niño y uno de usuario no autenticado para que, por medio de la empatía, recabar información complementaria. No realizaremos una User Persona del administrador, debido a que el mismo es una persona específica y trabajaremos directamente con él validando posteriormente los requerimientos.
+3. Control y libertad del usuario:
 
-#### 3.1.2.1 Usuarios de internet sin autenticar <a name="I3121"></a>
-![Imágen Usuario sin autenticar](APV-ob1-PNGs/UserPersonaUsuarioNoAutenticado.png)
+**NO CUMPLE** -El sistema no contiene una ‘puerta de emergencia’ para salir del estado indeseado, es decir no ofrece soporte para deshacer y rehacer acciones, esto se puede notar en la función de crear lección, una vez confirmada esta acción, no se puede deshacer, y ni siquiera el sistema ofrece la posibilidad de eliminar una lección existente.
 
-Los usuarios sin autenticar son personas que a través del marketing llegaron a la URL del sistema.
+4. Consistencia y estándares: 
 
-Pueden visitar las páginas de acceso público, las mismas deben mostrar aspectos personales que generen confianza en quien visita al sistema.
+**CUMPLE** -Se utiliza en todo el documento los estándares de clases de Bootstrap, manteniendo el documento homogéneo en cuanto a tamaño de botones, colores, fuente, entre otras. Si bien se utilizan clases especiales en ciertas ocaciones, estas no varían los estándares de Bootstrap.
 
-Debe existir una forma rápida de poner en contacto al usuario no autenticado con el administrador del sitio para concretar la inscripción al sistema.
+5. Prevención de errores:
 
-#### 3.1.2.2 User persona alumno <a name="I3122"></a>
+**NO CUMPLE** -No se informan las características que debe tener cada campo a completar en la pantalla crear lecciones (tipo de texto, largo máximo y mínimo). Los errores son reportados luego de haber sido cometidos al querer crear una lección con algún error.
 
-![Imágen User persona alumno](APV-ob1-PNGs/UserPersonaAlumno.png)
+6. Reconocimiento mejor que recuerdo: 
 
-Los alumnos, específicamente niños entre 8 y 12 años, se van a autenticar en el sistema con un usuario y contraseña previamente suministrada por el administrador.
+**NO APLICA** -El usuario no debe recordar la información de una parte del diálogo a otra. Cada pantalla contiene la información necesaria para ser utilizada sin excederse para que el usuario no tenga un sobrecargo de información.
 
-Una vez autenticados, van a poder navegar en la página, seleccionar cursos de guitarra y mirar las clases online. 
+7. Flexibilidad y eficiencia de uso:
 
-Ya que se pueden distraer, tendrán una forma rápida de acceso a la clase que continúa en su curso.
+**NO APLICA** -No se utilizan aceleradores y teclas con funciones específicas ya que por el alcance del proyecto es muy básica la funcionalidad a desarrollar, no se diferencias usuarios principiantes y expertos.
 
-El sistema guardará las clases que fueron reproducidas por el alumno, a efectos de mostrar a sus padres un resumen del progreso.
+8. Diseño estético y minimalista:
 
-### 3.1.3 Interesados o stakeholders <a name="I313"></a>
+**CUMPLE** -El sistema es muy básico, no contiene información irrelevante. El diseño es intuitivo y sencillo. 
 
-En esta sección vamos a identificar y clasificar los interesados o stakeholders:
+9. Ayudar a reconocer, diagnosticar y recuperarse de errores: 
 
-1.	**Internos**
+**CUMPLE** -Los mensajes de error informan exactamente el motivo por el cual no se pudo realizar una acción indicando con exactitud el error en cuestión. Esto se aplica en la página de *crearLeccion.html*, ya que es en la única donde el usuario puede cometer un error.
 
-    - Profesor de Guitarra que genera contenido para el sistema.
-    - Administrador del sistema.
-    - Alumnos.
-    - Padres / tutores de los alumnos.
-    - Equipo de desarrollo.
+10. Ayuda y documentación: 
 
-2.	**Externos**
+**NO CUMPLE**- No se provee ayuda y documentación para el usuario. 
 
-    - Otros Profesores de guitarra.
-    - Plataformas online donde dan clases de guitarra.
-    - Usuarios que no son alumnos.
+Conclusiones del Análisis heurístico:
 
-#### 3.1.3.1 Profesor de Guitarra que genera contenido para el sistema <a name="I3131"></a>
+Se puede apreciar en el análisis heurístico que menos de un tercio de las heurísticas se cumplen, por lo que no se puede asegurar la usabilidad del sistema. Deberán implementarse diversas mejoras en el diseño en futuras versiones para así lograr el objetivo deseado. La principal causa de que no se puedan cumplir con la mayoría de las heurísticas se debe al factor tiempo que se dispone para realizar el desarrollo del sitio.
 
-Tiene la responsabilidad de generar cursos de guitarra orientado a niños entre 8 a 12 años. Tiene un alto interés en el proyecto porque a causa de la pandemia no pudo continuar dando clases de manera presencial. Es uno de los interesados más importantes, ya que de la calidad de sus clases atraerá o no alumnos.
+### 6.1.2 Pruebas con usuarios <a name="I612"></a>
 
-#### 3.1.3.2 Administrador del sistema <a name="I3132"></a>
+Del documento referente a las [pruebas con usuarios](docs/APV-ob2-TestingConUsuarios-2020.md) concluye que, luego de realizar las pruebas a dos usuarios externos al equipo, se detectaron errores significativos.
 
-Tiene la responsabilidad de subir el contenido generado por el profesor a la plataforma online. Está a cargo de la gestión de usuarios con rol Alumno. Habilita o deshabilita de la plataforma a los usuarios alumnos dependiendo si están al día con el pago de la cuota. Recibe consultas administrativas mediante los datos de contacto presentes en la plataforma, de usuarios que no son alumnos. Tiene un interés positivo en el avance del proyecto, ya que el percibe un beneficio en base a la cantidad de alumnos registrados.
+De la primera prueba, se verificó que generar el entorno es muy importante, no sólo debemos ponerlos en situación, sino que también brindarle las herramientas que un usuario de ese estilo tendría en dicha situación, por lo que para la segunda prueba no sólo les leímos la situación, sino que también le brindamos los recursos necesarios y definiciones como tablatura y clase de guitarra.
 
-#### 3.1.3.3 Alumnos <a name="I3133"></a>
+Además solucionamos de la primer prueba a la segunda errores importantes en el sistema, que no sólo provocaban que el usuario se confunda, sino que también generaban una mala experiencia. Por más que sea sencilla la aplicación, se encontraron varios errores, la gran parte en la primera prueba (errores en navegación, confusión en cuanto a guardar canciones, confusión con el llenado de los campos, etc), en la segunda prueba se "pulieron" los errores, generando errores como el de la tablatura o el de definir bien dónde se crean las canciones por parte del usuario, errores que podrían ser subsanados en una siguiente etapa.
 
-Son los niños de 8 a 12 años que son usuarios del sistema. Lograr captar la atención de estos hará la diferencia entre el éxito o fracaso del proyecto. Tienen interés positivo en el proyecto ya que desean seguir aprendiendo a pesar de la restricción de la pandemia.
+Se tomó conciencia de la importancia de las pruebas con usuarios, debido a la restricción de tiempo sólo se pudo hacer con dos usuarios, pero se notó un cambio importante luego de subsanar los defectos que dió la primera prueba.
 
-#### 3.1.3.4 Padres y/o tutores <a name="I3134"></a>
+## 6.2 Evaluación de la Accesibilidad <a name="I62"></a>
 
-Son los responsables legales de los Alumnos. Tienen interés positivo en el proyecto ya que de ser exitoso se benefician en lo siguiente:
 
-- Ahorro de tiempo en traslado a la clase presencial.
-- Flexibilidad de horario, ya que al ser una clase grabada puede elegir el momento adecuado para darle acceso a hijo.
+Para evaluar la accesibilidad, se subieron los archivos html en la página [“AChequer”](https://achecker.ca/checker/index.php).
 
-#### 3.1.3.5 Equipo de desarrollo <a name="I3135"></a>
+El reporte dio los siguientes problemas:
 
-Se omite por no tener relevancia en este caso.
+1. Falta de texto alternativo en imagenes (1.1.1 Non-text Content (A))
 
-#### 3.1.3.6 Otros profesores de Guitarra <a name="I3136"></a>
+2. Falta de etiquetas, falta adaptabilidad (1.3.1 Info and Relationships (A))
 
-Estos profesores tienen interés positivo en el proyecto, ya que se encentran en la misma situación por causa de la pandemia. En etapas mas avanzas del proyecto, podrían estar interesados en subir su propio contenido y tener su grupo de alumnos utilizando la misma plataforma.
+3. No esta definido el lenguaje del documento (3.1.1 Languaje of Page (A))
 
-#### 3.1.3.7 Plataformas online donde dan clases de guitarra <a name="I3137"></a>
 
-Estos interesados no tienen interés positivo en el proyecto, por tratarse de competencia directa en el mercado.
+![Reporte de Accesibilidad](docs/PNGs/reporteAccesibilidad.png)
 
-#### 3.1.3.8 Usuarios que no son alumnos <a name="I3138"></a>
+### Reporte Accesibilidad Página Crear Lecciones
+[documento](docs/APV-ob2-AnalisisAccesibilidadCrearLecciones-2020.pdf)
 
-Son los usuarios que llegan a la plataforma producto del marketing, tienen interés en el sistema, ya que al ingresar a la misma, significa que están buscando un servicio similar al que la plataforma ofrece, convirtiéndose de esta forma en potenciales clientes.
+### Reporte Accesibilidad Realizar Lecciones
+[documento](docs/APV-ob2-AnalisisAccesibilidadRealizarLeccion-2020.pdf)
 
-## 3.2 Determinación del sistema <a name="I32"></a>
-### 3.2.1 Objetivo del sistema <a name="I321"></a>
+### Reporte Accesibilidad Página Ver Lecciones
+[documento](docs/APV-ob2-AnalisisAccesibilidadVerLecciones-2020.pdf)
 
-El objetivo del producto es crear una plataforma que cumple dos funciones básicas, la primera es brindar al cliente un marco para publicar su servicio, de forma de que usuarios no registrados puedan comunicarse con él para acceder al mismo. A su vez, también funciona para que puedan distribuir cursos a niños los que previamente solicitaron su acceso y fueron autorizados.
 
-Los accesos al sistema serán gestionados por un administrador que recibirá los pagos por un medio externo a la aplicación, y controlará los mismos de forma manual, a efectos de tener flexibilidad con los distintos clientes. El sistema debe estar adaptado a dispositivos móviles ya que los niños tienen un amplio dominio y uso de los mismos.
+# 7. TESTING FUNCIONAL <a name="I7"></a>
 
-### 3.2.2 Restricciones <a name="I322"></a>
+Para el desarrollo de esta etapa, se utilizaron técnicas de prueba de caja negra, los casos de prueba se derivaron de la especificación del programa.
 
-- El sistema deberá ser desarrollado en 30 días contando a partir del momento que se firma el documento de requerimientos de software (que no puede superar la fecha 15 de octubre del corriente año).
-- El costo total del desarrollo no podrá superar los USD 1000.
-
-### 3.2.3 Alcance del producto <a name="I323"></a>
-
-El software a desarrollar permite la baja, alta y visualización de videos. Alta, baja y asignación de videos a diferentes cursos existentes en el sistema, así como un histórico de reproducciones para los alumnos.
-
-También debe de estar diferenciadas dos secciones básicas: 
-- Una pública para el acceso al sistema sin estar autenticado.
-- Una privada para la administración y visualización de contenidos para usuarios autorizados.
-
-Existen dos tipos de usuarios autorizados que utilizán el sistema para diferentes tareas, usuario alumno y usuario administrador.
-
-### 3.2.4 Requerimientos de Usuario <a name="I324"></a>
-
-- Un Usuario no autenticado podrá acceder a información relevante del sitio.
-- Un Usuario administrador puede administrar a otros usuarios que cumplirán el rol de alumnos.
-- El Usuario administrador puede gestionar cursos en el sistema.
-- El Usuario de tipo alumno puede ver los cursos del sistema y sus videos.
-- El Usuario de tipo alumno puede acceder a su historial de videos vistos.
-
-### 3.2.5 Requerimientos del sistema <a name="I325"></a>
-
-- **Sección Pública**
-    - Un usuario no autenticado puede ver la información de contacto.
-- **Gestión de usuarios**
-    - El Usuario administrador puede dar de alta a usuarios de tipo alumno.
-    - El Usuario administrador puede dar de baja a usuarios de tipo alumno.
-    - El Usuario administrador puede habilitar o deshabilitar el acceso a los cursos de los usuarios de tipo alumno.
-- **Gestión de cursos**
-    - El Usuario administrador puede dar de alta nuevos cursos al sistema.
-    - El Usuario administrador puede dar de baja cursos existentes en el sistema.
-    - El Usuario administrador puede dar de alta videos y asociarlos a un curso específico.
-    - El Usuario administrador puede dar de baja videos asociados a un curso específico.
-- **Visualización del contenido**
-    - El Usuario alumno puede ver la lista de cursos disponibles en el sistema.
-    - El Usuario alumno puede seleccionar un curso específico del sistema.
-    - El Usuario alumno puede ver los videos correspondientes a un curso seleccionado.
-- **Histórico de reproducciones**
-    - El Usuario alumno puede ver su historial de videos vistos.
-
-# 4. ESPECIFICACIÓN  <a name="I4"></a>
-## 4.1 Diccionario de Datos <a name="I41"></a>
-### 4.1.1 DatosUsuario <a name="I411"></a>
-- **Descripción:** Datos que contendrá el usuario.
-
-|Campo      |Tamaño  |Tipo                  |Descripción                                                   |
-|-----------|--------|----------------------|--------------------------------------------------------------|
-|Email      |25      |Caracter              |Clave única, email del usuario                                |
-|Contraseña |8       |Caracter              |Cadena de caracteres que permite el acceso junto con el email |
-|Nombre     |50      |Caracter              |Nombre del usuario                                            |
-|Apellido   |50      |Caracter              |Apellido del usuario                                          |
-|Telefono   |15      |Caracter              |Teléfono del usuario                                          |
-|Habilitado |2       |Booleano              |True si está habilitado a acceder al sistema, False si no     |
-
-- **Claves:** Nombre.
-- **Relación:** Email con DatosHistorial.
+Se ejecutaron sesiones de testing exploratorio como primera instancia para familiarizarse con el sistema y encontrar la mayor cantidad de defectos y mejoras de usabilidad.
 
-### 4.1.2 DatosCurso <a name="I412"></a>
-- **Descripción:** Datos que contendrá el curso.
-
-|Campo       |Tamaño  |Tipo                  |Descripción                                                   |
-|------------|--------|----------------------|--------------------------------------------------------------|
-|Nombre      |10      |Caracter              |Clave única, nombre del curso                                 |
-|Descripción |200     |Caracter              |Descripción del curso                                         |
-|Nivel       |20      |Caracter              |Nivel del curso (principiante, intermedio o avanzado)         |
-|Habilitado  |2       |Booleano              |True si está habilitado a acceder al público, False si no     |
+Para la planificación se utilizó la técnica **Pruebas de caso de Uso** 
 
-- **Claves:** Nombre.
-- **Relación:** Nombre con DatosVideo NombreCurso.
+En esta segunda instancia se realiza una suite de pruebas, para cubrir los aspectos más funcionales del sistema. Se construyen las suites aplicando a partir de los casos de uso del sistema y se aplica el método de clases de equivalencia para lograr una cobertura mayor del sistema en general.
 
-### 4.1.3 DatosVideo <a name="I413"></a>
-- **Descripción:** Datos que contendrá el video.
+## 7.1 Generación de Casos de Prueba <a name="I71"></a>
 
-|Campo       |Tamaño  |Tipo                  |Descripción                                                   |
-|------------|--------|----------------------|--------------------------------------------------------------|
-|ruta        |10      |Caracter              |Clave única, ruta del video                                   |
-|NombreCurso |10      |Caracter              |Clave foránea, nombre del curso al que pertenece              |
+El detalle de lo realizado con la aplicación de la herramienta se encuentra en el [Planificación de casos de prueba](/docs/README.md).
 
-- **Claves:** NombreCurso, ruta.
-- **Relación:** NombreCurso con DatosCurso Nombre.
+## Casos de prueba para crear lección
 
-### 4.1.4 DatosHistorial <a name="I414"></a>
-- **Descripción:** Datos que contendrá el historial.
+![Casos de prueba para crear lección](assets/CPCrearLeccion.png)
 
-|Campo       |Tamaño  |Tipo                  |Descripción                                                   |
-|------------|--------|----------------------|--------------------------------------------------------------|
-|ruta        |10      |Caracter              |Clave foránea, ruta del video visto por el alumno             |
-|Email       |25      |Caracter              |Clave foránea, email del alumno                               |
-|Porcentaje  |100     |Numérico              |Valor en partes por 100 de reproducción de un video           |
+## Casos de prueba para crear canción
 
-- **Claves:** ruta, Email.
-- **Relación:** ruta con DatosVideo, Email con DatosUsuario.
+![Casos de prueba para crear canción](assets/CPCrearCancion.png)
 
-## 4.2 Diagrama de contexto <a name="I42"></a>
-A continuación se representa el sistema en un diagrama en el cual, de forma abstracta, se observa la relación entre el sistema y todas las entidades externas que pueden interactuar con el mismo.
+## Casos de prueba para realizar lección
 
-![Diagrama de contexto](APV-ob1-PNGs/DiagramaContexto.jpg)
+![Casos de prueba para realizar lección](assets/CPRealizarLeccion.png)
 
-## 4.3 Diagrama del dominio <a name="I43"></a>
-El diagrama del dominio nos permite identificar y explicar los conceptos más significativos en el dominio del problema, sus atributos y asociaciones existentes entre ellos, del dominio de interes que forma parte del marco del sistema. Nos permite representar todos los elementos interrelacionados que son necesarios para enteder correctamente el negocio del cliente y sus necesidades, y proponer una solucion adecuada a sus problemas.
-![Diagrama del dominio](APV-ob1-PNGs/DiagramaDominio.jpg)
 
-## 4.4 Diagrama de casos de uso <a name="I44"></a>
-A continuación diagramaremos el comportamiento del sistema para con los usuarios, donde se utiliza una representacion gráfica para modelar los casos de uso. Se muestran los casos de uso como parte del sistema que está siendo modelado y las relaciones entre los mismos.
-![Diagrama de casos de uso](APV-ob1-PNGs/DiagramaCasosDeUso.png)
+## 7.2 TESTING EXPLORATORIO <a name="I72"></a>
 
-## 4.5 Negociación y priorización de requerimientos <a name="I45"></a>
-En esta sección procederemos a priorizar los requerimientos, de esta forma podremos definir cuáles son de mayor importancia y cuáles más triviales. Utilizaremos la técnica de ranking está basada en una escala ordinal en la cuál a los requerimientos se les asigna una posición en el ranking, que va de 1 a 13, siendo 13 la cantidad de requerimientos funcionales. Y del 1 al 3 los requerimientos no funcionales.
+Se realizan cuatro sesiones de testing exploratorio debido a que el sistema es muy extenso por lo que no sería posible abarcarlo en una sola instancia y para permitirle a todos los integrantes del equipo familiarizarse con la interfaz.
 
-El puesto 1 es el de mayor importancia.
+### Primera sesión de testing exploratorio
 
-Luego de elicitar los requerimientos, confeccionamos un listado de los 13 requerimientos funcionales y 3 requerimientos no funcionales detectados y se lo presentamos a Rodrigo Fernández, quien después de la investigación, determinamos que sería el interesado que más interacción iba a tener con el sistema.
+Como resultado de esta sesión se reportaron los siguientes issues en git:
 
-### 4.5.1 Requerimientos Funcionales <a name="I451"></a>
-|# |Código |Nombre                        |Ranking|
-|--|-------|------------------------------|-------|
-|1 |RF01   |Alta Usuario                  |2      |
-|2 |RF02   |Baja Usuario                  |13     |
-|3 |RF03   |Suspención temporal de usuario|8      |
-|4 |RF04   |Login                         |5      |
-|5 |RF05   |Alta Curso                    |1      |
-|6 |RF06   |Baja Curso                    |12     |
-|7 |RF07   |Modificar Curso               |6      |
-|8 |RF08   |Alta Video                    |4      |
-|9 |RF09   |Baja Video                    |11     |
-|10|RF10   |Consulta Cursos               |10     |
-|11|RF11   |Seleccionar Curso             |7      |
-|12|RF12   |Ver Video                     |3      |
-|13|RF13   |Ver Historial                 |9      |
+1. El diseño de la interfaz en la página de inicio no es responsive, la interfaz no se adapta y diferentes dispositivos.
+**GitHub Issue#2**
 
-### 4.5.2 Requerimientos No Funcionales <a name="I452"></a>
-|# |Código  |Nombre                        |Ranking|
-|--|--------|------------------------------|-------|
-|1 |RFN01   |Diseño de Interfaz de Usuario |1      |
-|2 |RFN02   |Informe de Errores            |2      |
-|3 |RFN03   |Sistema                       |3      |
+2. El color del hover de la pantalla de inicio no pasa las pruebas de contraste, es muy claro.
+**GitHub Issue#3**
 
+[Sesión de test exploratorio 1](docs/APV-ob2-1erTestingExploratorio-2020.pdf)
 
-## 4.6 USER STORIES <a name="I46"></a>
-Aquí redactaremos tres historias de usuario que describen una funcionalidad simple y atómica de valor para dichos usuarios.
+### Segunda sesión de testing exploratorio
 
-### 4.6.1 User Story 01 Alta Usuario <a name="I461"></a>
+Como resultado de esta sesión se reportaron los siguientes issues en git:
 
-**ID:** #1	
+1. El color de fondo y letra del botón tomar lección no coincide con el del resto de la interfaz.  **GitHub Issue # 10**
 
-**Título:** Alta Alumno
+2. El título “Descripción” debe decir “Instructivo” **GitHub Issue #4**
 
-**Narrativa:**
+[Sesión de test exploratorio 2](docs/APV-ob2-2doTestingExploratorio-2020.pdf)
 
-    - Como: administrador
+### Tercera sesión de testing exploratorio
 
-    - Quiero: poder registrar a un nuevo alumno.
+Como resultado de esta sesión se reportaron los siguientes issues en git:
 
-    - Para: que el mismo tenga acceso a utilizar las funcionalidades de la aplicación.
+1. En la sección de Canción es confuso que nos deje seleccionar una canción, y al mismo tiempo un paso posterior, crear una canción, sería mas claro que aparezca una u otra opción. **GitHub Issue # 1**
 
-**Criterios de aceptación:**
-- El email debe ser único, y válido.
-- La contraseña debe ser alfanumérica de mínimo 8 caracteres, mayúsculas y minúsculas.
-- Nombre completo deben de tener al menos 5 caracteres.
-- Teléfono de contacto debe ser un campo numérico y por lo menos 8 cifras.
+[Sesión de test exploratorio 3](docs/APV-ob2-3erTestingExploratorio-2020.pdf)
 
-### 4.6.2 User Story 12 Ver Video <a name="I462"></a>
+### Cuarta sesión de testing exploratorio
 
-**ID:** #12
+Como resultado de esta sesión se reportaron los siguientes issues en git:
 
-**Título:** Ver Video
+1. En la página verLeccion.html, se despliegan todas las lecciones que se encuentren en el Sistema sin paginar, se podría agregar que muestre de a 4 lecciones por página ya que en el caso que hubiera un número Elevado de lecciones tendríamos que scrolear bastante. **GitHub Issue #11**
 
-**Narrativa:**
+2. En la página verLeccion.html Se podría agregar un buscador para agilizar la búsqueda de una lección puntual. **GitHub Issue #12**
 
-    - Como: alumno
+3. En la página realizarLeccion.html, cuando elegimos hacer una lección, se pierde la referencia en la barra de navegación, en donde nos encontramos. Se adjunta foto. **GitHub Issue #13**
 
-    - Quiero: poder continuar con la visualización de videos de un curso.
+[Sesión de test exploratorio 4](docs/APV-ob2-4toTestingExploratorioV2-2020.pdf)
 
-    - Para: poder seguir avanzando en el curso seleccionado.
 
-**Criterios de aceptación:**
-- El alumno debe estar autenticado con usuario y contraseña.
-- El alumno debe estar habilitado.
+## 7.3 EJECUCIÓN DE CASOS DE PRUEBA  <a name="I73"></a>
 
-### 4.6.3 User Story 05 Alta Curso <a name="I463"></a>
+### Ejecución de casos de prueba 1 a 6.2
 
-**ID:** #5
+Como resultado de esta sesión se reportó el siguiente issue en git:
 
-**Título:** Alta Curso
+1. Al querer crear una lección, si ponemos un archivo con una ruta de largo mayor a 100 caracteres si bien no deja crear la lección, no se le informa al usuario el motivo por el cual esto ocurre. **GitHub Issue #5**
 
-**Narrativa:**
+[documento](docs/APV-ob2-1raEjecucionCasosPrueba-2020.pdf)
 
-    - Como: administrador
+### Ejecución de casos de prueba 7 a 11.3
 
-    - Quiero: poder dar de alta un nuevo curso.
+Como resultado de esta sesión se reportaron los siguientes issues en git:
 
-    - Para: posteriormente cargarle videos y poder presentárselo a los alumnos.
+1. La única manera de poder crear una canción, es creando una lección en el transcurso, es decir que no es posible crear una canción independientemente de la lección. **GitHub Issue #6**
 
-**Criterios de aceptación:**
-- El nombre del curso debe ser único y poseer al menos 5 caracteres.
-- El curso debe ser creado con el estado deshabilitado por defecto, ya que al momento de creación no posee videos asociados. 
+2. Al colocar un autor con menos de 5 caracteres, el mensaje de error informa “el nombre debe poseer entre 5 y 20 caracteres”, pero el error surge cuando ingresamos al autor con una cantidad de letras menor a 5. **GitHub Issue #7**
 
-## 4.7 CASOS DE USO <a name="I47"></a>
-Los casos de uso son una descripción generalizada de un conjunto de interacciones entre el sistema y uno o más actores, procederemos a describir los tres de mayor priorización, que son los que representan las User Story anteriores.
+3. Al colocar un autor con más de 20 caracteres, el mensaje de error informa “el nombre debe poseer entre 5 y 20 caracteres”, pero el error surge cuando ingresamos al autor con una cantidad de letras mayor a 5. **GitHub Issue #8**
 
-### 4.7.1 Caso de Uso 01 Alta Usuario <a name="I471"></a>
+4. Al cargar una canción con un largo de ruta mayor a 100 caracteres, el sistema permite dar alta la canción, debiendo haber bloqueado esta acción informando al usuario que no esta permitido subir un archivo con un largo mayor a 100 caracteres. **GitHub Issue #9**
 
-![ ](APV-ob1-PNGs/CasoDeUso01.jpg)
+[documento](docs/APV-ob2-2daEjecucionCasosPrueba-2020.pdf)
 
-### 4.7.2 Caso de Uso 12 Ver Video <a name="I472"></a>
+### Ejecución de caso de prueba 12
+[documento](docs/APV-ob2-3daEjecucionCasosPrueba-2020.pdf)
 
-![ ](APV-ob1-PNGs/CasoDeUso12.jpg)
+# 8. REPORTE DE DEFECTOS <a name="I8"></a>
 
-### 4.7.3 Caso de Uso 05 Alta Curso <a name="I473"></a>
+El reporte de defectos brindó la información necesaria, para que el equipo pueda localizar de manera rápida y sencilla el issue para luego poder repararlo.
 
-![ ](APV-ob1-PNGs/CasoDeUso05.jpg)
+Durante todo el desarrollo del sistema, se fueron haciendo pruebas exploratorias, para intentar detectar en etapas tempranas defectos y ahorrar tiempo en re trabajo, por el hecho de encontrar errores en etapas más avanzadas.
 
-## 4.8 REQUERIMIENTOS FUNCIONALES <a name="I48"></a>
+Para reportar los defectos, utilizamos la pestaña de issues de git hub, y al momento de soluciarlos, en la información de los commits, hicimos referencia al issue que fue reparado.
 
-### 4.8.1 Gestión de usuarios <a name="I481"></a>
+[- Sección de Issues del Repositorio.](https://github.com/ORT-FIS-202008/ob2-ort-fis-obl2-alonso-palma-vera/issues/)
 
-#### **RF01 - Alta de usuario**
+A continuación dejamos un resumen de los issues detectados durante el desarrollo de software, aclarando que todos los issues no fueron posibles de reparar en esta primera versión, y que pueden existir mas issues no detectados.
 
-- **Rol:** Administrador
-- **Descripción:** El sistema deberá permitir crear un nuevo usuario del tipo alumno, utilizando un formulario de registro. Se deberá proporcionar nombre completo, dirección de correo electrónico, teléfono de contacto y contraseña que deberá contener 8 caracteres incluyendo 1 mayúscula y 1 número. 
-- **Prioridad:** ALTA
-- **Ranking:** #2
-- **Especificación:** CU-01
 
+![Reporte de defectos](assets/resumenReporteDefectos.png)
 
-#### **RF02 - Baja de usuario**
 
-- **Rol:** Administrador
-- **Descripción:** El sistema deberá permitir la eliminación permanente de usuarios del tipo alumno en el sistema. 
-- **Prioridad:** BAJA
-- **Ranking:** #13
+Analizando la aplicación, pudimos encontrar defectos en todos los puntos de la rubrica, gracias a la aplicación de diversas técnicas de ingeniería de software. 
 
-#### **RF03 - Suspensión temporal de usuario**
+Una de las limitantes que tuvimos fue el factor tiempo, por lo que se puede apreciar que muchos de los análisis no cuentan con la profundidad que debería corresponder, pero entendemos que asegurar la calidad del software es una tarea muy compleja y requiere de práctica y fuertes conocimientos en ingeniería de software, pero es un esfuerzo que a lo largo de la vida del software ahorra tiempo y dinero al hacer mucho mejor de mantener el software.
 
-- **Rol:** Administrador
-- **Descripción:** El sistema deberá permitir cambiar el estado para que un usuario con el rol alumno pueda acceder o no acceder a la sección privada destinada únicamente a los alumnos habilitados.
-Esta función no modifica ni elimina los otros atributos y relaciones con el histórico del usuario alumno.
-Si un alumno que se encuentra suspendido intenta ingresar al sistema, se le notificará que se encuentra suspendido.
-- **Prioridad:** MEDIA
-- **Ranking:** #8
+Tampoco nos podemos olvidar de los usuarios que van a utilizar nuestro sitio, todo el esferzo debe estar enfocado hacia ellos para poder captar su atención y que la experiencia sea satisfactoria (usabilidad) y que sea posible abarcar el mayor público posible (usabilidad).
 
-### 4.8.2 Autenticación de usuarios <a name="I482"></a>
 
-#### **RF04 - Login**
+# 9. TRABAJO DEL EQUIPO <a name="I9"></a>
 
-- **Rol:** Usuario no Autenticado
-- **Descripción:** El sistema deberá detectar automáticamente solo con el nombre de usuario y contraseña que el usuario es del tipo administrador o tipo alumno. Al ingresar habilitará al usuario a acceder a las secciones correspondientes a su rol.
-- **Prioridad:** ALTA
-- **Ranking:** #5
+Durante el proceso de elaboración del presente trabajo, se evidenciaron cuatro etapas, que si bien se fueron superponiendo, fueron marcadas, las etapas fueron las siguientes:
 
-### 4.8.3 Gestión de cursos <a name="I483"></a>
+- La "bajada a tierra" de la letra:
 
-#### **RF05 - Alta Curso**
+    - En esta etapa se contó con varias reuniones de planificación y de verificar cómo se pretendía llevar a cabo al proyecto, se tuvo una idea del alcance del mismo y de las etapas posteriores, se verificaron los fuertes de cada integrante del equipo y se generaron roles para administrar el tiempo y actividades. Si bien los roles fueron flexibles dependiendo la etapa, se mantuvo durante el tiempo de trabajo (Alonso desarrollo, Vera tester, Palma gestor del proyecto).
 
-- **Rol:** Administrador.
-- **Descripción:** El sistema deberá contar con una funcionalidad que permita dar alta de nuevos cursos, ingresando nombre del curso (el cual debe ser único), descripción y nivel (el nivel se selecciona de un combo box que brinda la opción: Principiante, intermedio y avanzado).
-La descripción tendrá entre 5 y 200 caracteres. El nombre tiene entre 2 y 10 caracteres.
-- **Prioridad:** ALTA
-- **Ranking:** #1
-- **Especificación:** CU-05
+- Desarrollo:
 
+    - La etapa de desarrollo empezó con la creación de la estructura de la aplicación por parte de Valeria Vera, luego se decidió cambiar de la utilización de css a scss, con lo que llevó una reestructura. En esta etapa se contó con la codificación por parte de todos los integrantes del equipo luego de una restructuración generada por Federico Alonso, se marcó una estructura y se dividieron las tareas.
 
-#### **RF06 - Baja Curso**
+- Testing:
 
-- **Rol:** Administrador.
-- **Descripción:** El sistema deberá contar con una funcionalidad que permita eliminar los cursos existentes. Se debe seleccionar el curso a eliminar y luego presionar "Eliminar", se solicitará confirmar la operación.
-- **Comentarios:** No es posible eliminar un curso si el mismo tiene videos asociados.
-- **Prioridad:** MEDIA
-- **Ranking:** #12
+    - En esta etapa Valeria Vera utilizó la experiencia personal para que, junto con lo aprendido en clase guiar al equipo en lo referente a la aplicación de las pruebas necesarias para evaluar el proyecto. Cristian Palma junto con Valeria Vera dividieron el trabajo para el correcto funcionamiento del equipo.
 
-#### **RF07 - Modificar Curso**
+- Documentación:
 
-- **Rol:** Administrador.
-- **Descripción:** El sistema deberá contar con una funcionalidad que permita modificar los cursos. El usuario administrador selecciona un curso. El sistema ofrece modificar el estado del curso, el nombre, la descripción y el nivel del curso.
-- **Comentarios:** No es posible habilitar un curso que no tenga videos asociados. No es posible modificar el nombre de un curso si el nombre que se desea ya existe. 
-- **Prioridad:** ALTA
-- **Ranking:** #6
+    - La documentación fue parte de todos los integrantes del equipo, lo que llevó a que Cristian Palma tuviera que establecer un control y estandarización de los mismos antes de armar el documento final con partes de todo lo estudiado previamente.
 
-### 4.8.4 Gestión de videos <a name="I484"></a>
+# 10. REFLEXIÓN <a name="I10"></a>
 
-#### **RF08 - Alta Video**
+A lo largo del proceso de generar el obligatorio obtuvimos el valor de realizarle las pruebas tanto al código como el trabajo de testing. Ciertamente no es la misma la aplicación antes y después de realizar el testing.
 
-- **Rol:** Administrador.
-- **Descripción:** El sistema será capaz de almacenar videos. El usuario hace click en el botón subir video y el sistema abre un cuadro de dialogo en donde el usuario selecciona un video de su ordenador. El video queda asociado al curso que el usuario administrador se encuentra modificando. 
-- **Comentario:** El botón de subir video está disponible en la ventana de Modificar Curso del curso seleccionado. Cuando el video termina de subir, aparece visible en la ventana modificar curso. El video no podrá superar los 100 MB.
-- **Prioridad:** ALTA
-- **Ranking:** #4
+En cuanto a la calidad de código, se evidencia que aplicar políticas de estandarización de la codificación no sólo ayuda a trabajar en equipo, sino que soluciona posibles errores en el sistema, además de corregir el código para que los navegadores no tengan problema para entender los mismos.
 
-#### **RF09 - Baja Video**
+Tener pruebas unitarias ayuda en cuanto a la reestructuración de código y la modificación de clases. Aprendimos que el tiempo ocupado en elaborar las pruebas, es luego ahorrado en la solución de problemas. Aparte le brinda confiabilidad al sistema, ya que con las pruebas de usuario aprendimos que no todos los usuarios se percatan de todos los problemas.
 
-- **Rol:** Administrador.
-- **Descripción:** El sistema será capaz de permitir al usuario administrador eliminar videos asociados a un curso. El usuario hace click en el botón eliminar video y luego confirma la eliminación. 
-- **Comentario:** El botón de eliminar video está disponible en la ventana de Modificar Curso del curso seleccionado.
-- **Prioridad:** MEDIA
-- **Ranking:** #11
+En cuanto a la interfaz de usuario, pruebas de aceptabilidad y usabilidad, aprendimos a utilizar herramientas existentes para realizar las pruebas. Se aprendió a su vez de dónde buscar los estándares que aplican a la vista en navegador. Nos percatamos de errores que ocurren por no dar importancia a la relevancia de los botones y sus funciones. Errores que se evidenciaron luego en el testing funcional. Instancia en la cual nos dimos cuenta de que es importante una visión desde "fuera" o "arriba", dejando de lado que fuimos nosotros quienes creamos el sistema, para realizar pruebas mas objetivas.
 
-### 4.8.5 Visualización de contenido <a name="I485"></a>
+Aplicando técnicas de testing funcional fue que pudimos detectar una gran cantidad de issues en la aplicación. Fue de suma importancia esta etapa, ya que no sólo aprendimos a aplicar las técnicas, sino que también nos permitió investigar y poder alcanzar a ver las aplicaciones en general con una visión más crítica.
 
-#### **RF10 - Consulta de cursos**
+Lo que el trabajo de reporte de defectos logró, fue organizar todos los errores encontrados. Fue de suma importancia aplicar un estandar de elaboración, ya que seguir pasos y poner los puntos relevantes es mucho mejor a que cada integrante los documente a su criterio. Además, permitía seguir los pasos para reproducir el defecto y luego es más sencillo corregirlo.
 
-- **Rol:** Alumno.
-- **Descripción:** El sistema deberá mostrar la lista de cursos disponibles que se encuentren habilitados para los usuarios con el rol alumno.
-- **Prioridad:** ALTA
-- **Ranking:** #10
-
-#### **RF11 - Seleccionar curso**
-
-- **Rol:** Alumno.
-- **Descripción:** El sistema deberá permitir seleccionar un curso. Luego de que el usuario selecciona el mismo, se mostrará en otra ventana los videos asociados al curso seleccionado.
-- **Prioridad:** ALTA
-- **Ranking:** #7
-
-#### **RF12 - Ver video**
-
-- **Rol:** Alumno.
-- **Descripción:** El sistema deberá permitir la reproducción de videos subidos en la plataforma.
-- **Comentario:** Para seleccionar un video a ser reproducido, se debe estar dentro de un curso seleccionado, el porcentaje de reproducción se guarda en un historial asociado al usuario alumno.
-- **Prioridad:** ALTA
-- **Ranking:** #3
-- **Especificación:** CU-12
-
-
-### 4.8.6 Histórico de reproducciones <a name="I486"></a>
-
-#### **RF13 - Ver Historial**
-
-- **Rol:** Alumno.
-- **Descripción:** El Sistema será capaz de mostrar al usuario alumno la lista de videos que ha reproducido y el porcentaje de reproducción de los mismos.
-- **Comentario:** Para seleccionar un video a ser reproducido, se debe estar dentro de un curso seleccionado.
-- **Prioridad:** ALTA
-- **Ranking:** #9
-
-# 4.9 REQUERIMIENTOS NO FUNCIONALES <a name="I49"></a>
-
-
-#### **RNF01 - Diseño de Interfaz de Usuario**
-
-- **Descripción:** La interfaz de usuario debe ser responsive (se debe adaptar a dispositivos web y móviles).
-- **Categoría:** Usabilidad.
-- **Prioridad:** Alta 
-- **Ranking:** #1
-
-#### **RNF02 - Informe de Errores**
-
-- **Descripción:** El sistema deberá informar en forma detallada los errores que surjan durante la ejecución del programa con el objetivo de retroalimentar al usuario.
-- **Categoría:** Usabilidad.
-- **Prioridad:** Alta
-- **Ranking:** #2
-#### **RNF6 - Sistema**
-
-- **Descripción:** El sistema debe correr en internet Explorer versión 10 o superior, Google Chrome versión 76 o superior, Safari 5.1.10 o superior y Mozilla Firefox 77.01 o superior.
-- **Categoría:** Funcionalidad
-- **Prioridad:** Media
-- **Ranking:** #3
-
-# 5. VERIFICACIÓN Y VALIDACIÓN DE REQUERIMIENTOS <a name="I5"></a>
-
-## 5.1 VERIFICACIÓN <a name="I51"></a>
-
-Para verificar los requerimientos del sistema se utilizá la técnica revisión de pares, porque se determinó que era la más adecuada porque se requiere poco tiempo y recursos (teniendo en cuenta las limitaciones del proyecto en tiempo y costo).
-
-El objetivo de esta verificación fue determinar que todos los requerimientos cumplieran con las siguientes características deseables como, por ejemplo:
-
-- Completo, correcto, factible, necesario, priorizado, no ambiguo y verificable.
-- Consistente, modificable y trazable.
-
-Cada requerimiento se consideró como un artefacto de software y para la verificación de estos, efectuamos la revisión de a pares entre dos miembros del equipo del obligatorio y el estudio detallado se encuentra en el documento [Verificación de requerimientos](APV-ob1-VerificacionRequerimientos-2020.md).
-
-## 5.2 VALIDACIÓN <a name="I52"></a>
-
-Para la validación de requerimientos se utilizá la técnica de prototipado, la cual fue realizada mediante 3 reuniones de forma presencial con el cliente.
-
-### 5.2.1 Primera reunión <a name="I521"></a>
-
-Se le presenta al cliente dos alternativas de interfaz de usuario, se pueden los prototipos completos en el documento: [Documento Primera Reunión ](APV-ob1-PrototipadoPrimeraReunion-2020.md) 
-
-![Ejemplo prototipo 1](APV-ob1-PNGs/EjemploPrototipo1.jpg)
-
-![Ejemplo prototipo 2](APV-ob1-PNGs/EjemploPrototipo2.jpg)
-
-#### Retroalimentación de la primera reunión:
-
-El cliente se inclinó por el prototipo 2 y realizó para cada imagen del documento APV-ob1-PrototipadoPrimeraReunion-2020 las siguientes observaciones:
-
-- Figura 16: Se cambia la columna habilitado,para que muestre en cada fila un botón que al presionarlo cambia el estado del alumno entre habilitado y deshabilitado.
-- Figura 18: A la descripción del video, se le agrega el curso al cual pertenece y el nivel de dicho curso.
-- Figura 19: Se agrega el curso a la cual pertenece la clase.
-- El cliente, además de las páginas mostradas en el prototipo solicitó que se agregue una nueva página en la cual se muestren todos los cursos de la plataforma.
-
-### 5.2.2 Segunda reunión <a name="I522"></a>
-
-Se agregan, además de los cambios solicitados, los modelos de formularios para simular la implementación de los requerimientos. El estudio detallado se encuentra en el archivo: [Documento Segunda Reunión ](APV-ob1-PrototipadoSegundaReunion-2020.md).
-
-![Ejemplos formularios ](APV-ob1-PNGs/Formularios.jpg) 
-
-![Selección de cursos ](APV-ob1-PNGs/SeleccionDeCursos.jpg) 
-
-#### Retroalimentación de la segunda reunión:
-
-- En los formularios cambiar el texto del botón Close por Cerrar.
-- En el formulario 2, cambiar el diseño del video en miniatura junto al botón de eliminar. Al cliente no le pareció estático.
-
-Se obtuvo un feedback suficiente para diseñar un prototipo evolutivo en HTML, el cual será utilizado en una tercera reunión.
-
-### 5.2.3 Tercera reunión <a name="I523"></a>
-
-En la [Tercera Reunión ](APV-ob1-PrototipadoTerceraReunion-2020.md) se le presenta al cliente un prototipo evolutivo en HTML, que le permitió ver al cliente como funcionan los requisitos solicitados al implementarlos, obteniendo de esta manera una validación más precisa.
-
-El cliente experimentó con el prototipo tanto como [Usuario no Autenticado](http://htmlpreview.github.com/?https://github.com/federicoalonso/preEntrega/blob/main/APV-ob1-Prototipos-HTML-2020/index.html), [Alumno](http://htmlpreview.github.com/?https://github.com/federicoalonso/preEntrega/blob/main/APV-ob1-Prototipos-HTML-2020/dashboardAlumno.html) y [Administrador](http://htmlpreview.github.com/?https://github.com/federicoalonso/preEntrega/blob/main/APV-ob1-Prototipos-HTML-2020/adminDashboard.html), y se obtuvieron las observaciones que a continuación se detallan:
-
-- Experimentando la navegación como alumno, se solicita que el alumno pueda acceder de forma más rápida al curso que viene siguiendo.
-
-Se corrigió la observación, agregando un botón de accedo directo a la última lección, en la página de inicio del alumno.
-
-Tras la aceptación del cliente de esta ultima modificación, se dio por finalizada la etapa de validación.
-
-
-# 6. REFLEXIÓN <a name="I6"></a>
-
-Haciendo retrospectiva de las etapas que hemos atravesado durante este proceso, nos dimos cuenta de que la aplicación de las técnicas de ingeniería de software nos facilitó la tarea de trabajo en equipo, porque la discusión grupal al momento de abordar un problema simplemente consistía seleccionar y justificar que técnicas íbamos a utilizar en cada fase. Luego solo teniamos que cumplir paso a paso el procedimiento establecido y obtener resultados elaborados.
-
-En la etapa de elicitación, el grupo decidió utilizar inicialmente la técnica de “Entrevista” para entender el problema de negocio. Fue la etapa que nos llevo más tiempo, porque nos costó definir el alcance del proyecto hasta que investigamos sobre el llamado triángulo de hierro en gestión de proyectos, entonces de los 3 pilares esenciales que se mencionan:
-
-- Alcance
-- Tiempo
-- Costo
-
-La primera limitación que teníamos de antemano fue el tiempo que estaba determinado por la fecha de entrega del obligatorio. Luego, partiendo como base esto, planificamos las entrevistas al Profesor de Música (cliente 1) y el hijo (cliente 2).
-
-La primera entrevista comenzó siendo al cliente 1, las preguntas planificadas no fueron suficientes por lo que comenzamos a improvisar preguntas durante la entrevista. Como lección aprendida, concluimos que nos faltó hacer una mejor planificación de las preguntas.
-
-Para la segunda entrevista mejoramos la planificación, pudimos captar mejor las necesidades del cliente, incluso nos mencionó que había visto una página en internet la cual podríamos usar como modelo para obtener requerimientos.
-
-Del resultado de la segunda entrevista, decidimos aplicar la técnica de “Ingeniería Reversa”, y nos dimos cuenta de que fue más fácil obtener requerimientos mas cercanos a lo que sería un requerimiento funcional, pero todavía nos faltaba información referente a los futuros usuarios del sistema entonces decidimos aplicar la técnica “User Persona”. 
-
-Gracias a la técnica user persona  nos pusimos en el lugar de los que serian potenciales clientes del sistema y desde su perspectiva nos permitió visualizar otro tipo de requerimientos que todavía no habíamos logrado captar.
-
-Como conclusión en esta etapa de elicitación notamos que todas las técnicas utilizadas aportaron información valiosa, y que es ventajoso utilizar más de una técnica ya que las mismas se complementan.
-
-En la etapa de especificación, nos tocó aplicar 3 técnicas que fueron:
-
-1.	Ranking
-2.	User Story
-3.	Casos de uso
-
-La técnica de Ranking no fue una complicación porque después de la elicitación, vimos que los stakeholders que tenían que ponerse de acuerdo en priorizar los requerimientos era el cliente 1 y cliente 2 y al ser el alcance muy acotado, la cantidad de requerimientos era bastante limitado. 
-
-Para la realización de las user stories y los casos de uso decidimos enfocarnos en los 3 primeros requerimientos resultados de la priorización:
-
-- Alta Curso
-- Alta Usuario
-- Ver Video
-
-La técnica de user stories no nos dio ninguna complicación, y aplicamos el procedimientos sin inconvenientes. 
-
-La experiencia obtenida de aplicar la técnica de casos de uso, fue que resultó tedioso tener que cambiar cambiar en reiteradas oportunidades la redacción del caso de uso a medida que ibamos teniendo entrevistas de validación con el cliente. Lo que nos facilitó a definir detalladamente los flujos principales y alternativos, fue cuando usamos el prototipado en HTML para verificar si los flujos coincidian con lo que se testeaba. 
-
-En la etapa de verificación de los requerimientos, si bien entendíamos que los mismos debían cumplir con ciertas características (completos, correctos, no ambiguos, etc), en primera instancia no habíamos aplicado ninguna técnica para comprobar fehacientemente estas características. Se consultó al docente y nos recomendó utilizar la técnica de revisión de a pares. Luego de aplicar esta técnica, encontramos fallas en 6 requerimientos. Las fallas fueron que teníamos requerimientos redactados de forma incompleta y otros eran ambiguos, tomando conciencia de la importancia de una correcta verificación.
-
-En la etapa de validación, utilizamos la técnica de prototipado y en las reuniones con el cliente en referencia al mismo pudimos observar las diferentes visiones que pueden existir sobre los mismos requerimientos. Uno pensaría que al estar especificados de forma rigurosa no daría a lugar a la confusión o a grandes diferencias en cuanto a la realización del sistema, pero la verdad es que hay infinitas soluciones tomando en cuenta la cantidad de contenido que existe hoy en día para utilizar en la interfaz de usuario. Se necesitaron de tres reuniones con el cliente para obtener un resultado que conforme a todo el equipo y satisfaga las necesidades del cliente.
-
-Como conclusión el modelado nos sirvió para lograr comprender que los clientes pueden tener ideas diferentes a las del equipo de desarrollo y lograr la armonía entre esas ideas y lo factible puede llevar más tiempo del que se espera, pero realizando un modelado completo nos ahorramos tiempo en etapas posteriores y un mejor entendimiento del problema en cuestión.
-
-Gracias a la Ingeniería de Software podemos afirmar que el sistema cumple con los expectativas planteadas por el cliente, debido a que la aplicacion de técnicas nos brindan esa respuesta de forma certera, apoyada en estándares. Este producto le dará un valor agregado al negocio del cliente, ya que el uso de la tecnología le permitirá romper barreras que hoy estan limitando su productividad, como por ejemplo: presencialidad se sustituye por clases online, aumentando de esta forma la cantidad de alumnos sin necesidad de más horas de trabajo. Además, le brindará una carta de presentación digital para el marketing online que realiza el cliente dando seriedad a su negocio.
-
-Como conclusión final, pudimos comprender la importancia de la Ingeniería de Software, más allá del tamaño del proyecto, por ejemplo, en este caso se trató de un proyecto sencillo y con todo el trabajo realizado generamos una   base sólida para que el equipo de desarollo pueda seguir trabajando sobre ella.
-
-Para la realización de este documento, se utilizó un cliente ficticio, que nos permitió trabajar a nuestros tiempos,  aplicar cada uno de los integrantes del equipo las diferentes técnicas en más de una oportunidad y aprender mediante ensayo y error la correcta utilización de las mismas.
+Para finalizar, nos queda la experiencia de llevar a cabo una aplicación de pequeño porte y testearla. Nos llevamos una idea de el tiempo que conlleva cada etapa del trabajo realizado, así como el conocimiento de todas las herramientas que ayudan a realizar una aplicación fiable y consistente. Si bien por razones de tiempo no se pudo realizar una aplicación estéticamente correcta, ni completamente funcional, se evidenció todo el proceso que debe acompañar y que debe pasar la misma. Al contrario del obligatorio anterior, en este caso si pudimos testear lo creado con usuarios reales, lo cual fue una valiosa experiencia, y ayudó a aislarnos del hecho de que fuimos nosotros quienes creamos la aplicación y poder dejar el orgullo de lado para ver la misma de forma objetiva.

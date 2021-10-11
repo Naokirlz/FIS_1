@@ -1,0 +1,71 @@
+.input-box {
+    width: 100%;
+    position: relative;
+    color: $font-light;
+    min-height: 35px;
+    font-family: $font-text;
+    margin-bottom: 45px;
+
+    input, textarea {
+        font-family: $font-text;
+        font-weight: 700;
+        letter-spacing: 1px;
+        position: absolute;
+        background-color: transparent;
+        width: 90%;
+        height: 100%;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid $border-grey;
+        border-left: 1px solid $border-grey;
+        border-radius: 15px 0 0 15px;
+        outline: none;
+        padding: 0 10px;
+        z-index: 1;
+        &:focus + label,
+        &:valid + label {
+            top: -30px;
+            left: 0;
+        }
+    }
+
+    &.textarea{
+        height: 100px;
+    }
+
+    textarea{
+        padding-top: 10px;
+        resize: none;
+    }
+
+    &.files{
+        & + label {
+            top: -30px;
+            left: 0;
+        }
+        border-bottom: 1px solid $border-grey;
+        border-left: 1px solid $border-grey;
+        border-radius: 15px 0 0 15px;
+        margin-bottom: 0;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    
+    input[type="file"] {
+        display: none;
+
+    }
+
+    label {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        line-height: 35px;
+        display: block;
+        transition: 0.5s;
+        pointer-events: none;
+    }
+
+    
+}

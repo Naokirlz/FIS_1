@@ -1,0 +1,120 @@
+.custom-file-label::after {
+	content: "Buscar";
+}
+
+#btn-togleVisible {
+	transition: 0.5s ease-in-out;
+	display: block;
+	margin-left: 0%;
+	width: 250px;
+	&.derecha {
+		margin-left: calc(100% - 250px);
+	}
+}
+
+.selCancion {
+	position: relative;
+	.ladoIzquierdo,
+	.ladoDerecho {
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition: 0.5s;
+		&.visible {
+			max-height: 5000px;
+			opacity: 1;
+		}
+	}
+}
+
+.not {
+	display: none;
+}
+
+.toastAlert {
+	position: fixed;
+	width: 33vw;
+	right: 20px;
+	top: 20px;
+	font-weight: 700;
+}
+
+.toastAlert .alert {
+	border-radius: 8px;
+	padding: 10px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
+	transform: translateY(-20px);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s;
+}
+
+.toastAlert .alert span {
+	margin-right: 5px;
+	float: right;
+	opacity: 0.6;
+}
+
+.toastAlert .alert span:hover {
+	cursor: pointer;
+	transform: scale(1.02);
+	opacity: 1;
+}
+
+.toastAlert .alert.vis {
+	transform: translateY(0px);
+	opacity: 1;
+	visibility: visible;
+	z-index: 1000;
+}
+
+.toastAlert.vis {
+	opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+}
+
+.toastAlert .alert.success {
+	border: 1px solid green;
+	background: rgba(1, 189, 1, 0.816);
+}
+
+.toastAlert .alert.danger {
+	border: 1px solid orange;
+	background: rgba(255, 166, 0, 0.898);
+}
+
+.toastAlert .alert.error {
+	border: 1px solid red;
+	background: rgba(255, 0, 0, 0.864);
+}
+
+.toastAlert .alert.success:hover {
+	background: rgba(1, 189, 1, 0.774);
+	cursor: pointer;
+}
+
+.toastAlert .alert.danger:hover {
+	background: rgba(255, 166, 0, 0.774);
+	cursor: pointer;
+}
+
+.toastAlert .alert.error:hover {
+	background: rgba(255, 0, 0, 0.774);
+	cursor: pointer;
+}
+
+.note-editor.note-frame.card.is-invalid{
+	border: 1px solid red;
+}
+
+#crear-lecc{
+	max-height: 10000px;
+	opacity: 1;
+	transition: 0.5s;
+}
+
+#crear-lecc.invisible{
+	max-height: 0;
+	opacity: 0;
+}

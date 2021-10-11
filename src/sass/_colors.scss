@@ -1,0 +1,29 @@
+$primary: #1da0f2;
+$primary-light: #71c9f8;
+$primary-grey: #8799a6;
+$primary-dark-light: #192734;
+$primary-dark: #15212b;
+
+$font-primary: $primary;
+$font-light: $primary-grey;
+$font-smoke: rgb(245, 245, 245);
+$font-grey: $primary-dark-light;
+$font-dark: #000;
+$font-title-color: #c66f07;
+
+$border-primary: $primary;
+$border-light: rgb(208, 208, 208);
+$border-grey: #38444d;
+$border-dark: $primary-dark;
+
+$background-light: #fff;
+$background-primary: #fef3e6;
+$background-grey-dark: #eeeeeeb4;
+$background-grey-light: #f2f2f254;
+$background-dark-light: $primary-dark-light;
+
+$danger: #e0245e;
+$success: rgb(34, 175, 34);
+$success-hover: rgb(5, 106, 5);
+$cancel: rgb(191, 191, 191);
+$cancel-hover: rgb(118, 108, 108);

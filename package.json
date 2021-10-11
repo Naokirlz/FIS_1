@@ -1,0 +1,32 @@
+{
+  "name": "ob2-ort-fis-obl2-alonso-palma-vera",
+  "version": "1.0.0",
+  "description": "ob2-ort-fis-obl2-alonso-palma-vera created by GitHub Classroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node app.js",
+    "build": "webpack --config webpack.config.js",
+    "sass": "node-sass src/sass/index.scss src/css/stylesConfig.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ORT-FIS-202008/ob2-ort-fis-obl2-alonso-palma-vera.git"
+  },
+  "author": "Alonso | Palma | Vera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ORT-FIS-202008/ob2-ort-fis-obl2-alonso-palma-vera/issues"
+  },
+  "homepage": "https://github.com/ORT-FIS-202008/ob2-ort-fis-obl2-alonso-palma-vera#readme",
+  "dependencies": {
+    "css-loader": "^5.0.1",
+    "script-loader": "^0.7.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
